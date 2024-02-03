@@ -20,12 +20,12 @@ yarn add -D @types/passport-jwt
 
 Using npm:
 ```
-npm install nestjs-supabase-auth
+npm install nestjs-supabase-auth-v2
 ```
 
 Using yarn:
 ```
-yarn add nestjs-supabase-auth
+yarn add nestjs-supabase-auth-v2
 ```
 
 ## Example
