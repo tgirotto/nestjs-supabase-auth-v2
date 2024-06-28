@@ -12,11 +12,11 @@ import { SupabaseAuthUser } from "./user.type";
 
 export class SupabaseAuthStrategy extends Strategy {
   readonly name = SUPABASE_AUTH;
-  private supabase: SupabaseClient;
-  private extractor: JwtFromRequestFunction;
-  success: (user: any, info: any) => void;
+  protected supabase: SupabaseClient;
+  protected extractor: JwtFromRequestFunction;
+  protected success: (user: any, info: any) => void;
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  fail: Strategy["fail"]
+  protected fail: Strategy["fail"]
 
   constructor(options: SupabaseAuthStrategyOptions) {
     super();
@@ -34,7 +34,7 @@ export class SupabaseAuthStrategy extends Strategy {
     this.extractor = options.extractor;
   }
 
-  async validate(payload: SupabaseAuthUser): Promise<SupabaseAuthUser | null> {
+  async validate(payload: any): Promise<SupabaseAuthUser | null> {
     if (!!payload) {
       this.success(payload, {});
 
